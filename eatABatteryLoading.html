@@ -14,6 +14,8 @@
     <link href="/static/eatabattery.css" rel="stylesheet">
     <!-- Custom Fonts -->
 
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/static/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -121,8 +123,8 @@
 
 	<div class="row">
 		<div class="col-md-3 left">
-		    <div class="thumbnail"> 
-			<img class="thumbnail" src="/static/batteryDeath.gif">         
+		    <div class="thumbnail" style="max-width:5%;min-width:250px;"> 
+			<img class="thumbnail" src="/static/batteryDeath.gif" style="width:100%">         
         </div>
         </div> 
         <div class="col-md-6 middle">
@@ -164,7 +166,7 @@
             <div class="navbar-fixed-bottom">
             <div class="container row" id="foot">
                 <div class="col-md-4 left"></div>
-                <div class="col-md-4 middle"align="center">
+                <div class="col-md-4 middle" align="center">
                 <p>&copy; 2017<br>Hobbs Ricci Heavy Industries</p>
             </div>
             <div class="col-md-4 right"></div>
@@ -175,7 +177,5 @@
     </div>
     <!-- /.container -->
 </body>
-    <!-- jQuery -->
-    <!--script src="{% static "js/jquery.js" %}"></script-->
 
 </html>
