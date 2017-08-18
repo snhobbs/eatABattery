@@ -1,0 +1,18 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block main %}
+<div class="container vertical-text" style="margin:100px">
+	<div class="row">
+		<div class="col-md-3 left">
+		    <div class="thumbnail" style="max-width:5%;min-width:250px;"> 
+                <img class="thumbnail" src="{% static "pages/batteryDeath.gif" %}" style="width:100%">         
+            </div>
+        </div> 
+        <div class="col-md-6 middle">
+        {% include "pages/battery.html" %}
+		</div>
+        <div class="col-md-3 right"></div>
+		</div>
+    </div>
+</div>
+{% endblock %}

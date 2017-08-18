@@ -1,0 +1,30 @@
+{% extends "protobase.html" %}
+{% load static pages_tags mezzanine_tags i18n staticfiles %}
+
+{% block extra_css %}
+<link href="{% static "pages/eatabattery.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="container" style="padding:60px;">
+    {% block main %}{% endblock %}
+</div>
+{% endblock %}
+
+<!-- Footer -->
+{% block footer %}
+<div class="container">
+<footer style="background-color:transparent;border:0;" width="100%">
+    <div class="navbar-fixed-bottom">
+        <div class = "row">
+        <div class="col-md-4 left"></div>
+        <div class="col-md-4 middle" align="center">
+            <p>&copy; 2017<br>Hobbs Ricci Heavy Industries</p>
+        </div>
+        <div class="col-md-4 right"></div>
+    </div>
+    </div>
+</footer>
+</div>
+{% endblock %}
+ 

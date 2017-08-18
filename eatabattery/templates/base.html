@@ -1,0 +1,40 @@
+{% extends "protobase.html" %}
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+
+<div class="col-md-2 left">
+    {% block left_panel %}
+    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+    {% endblock %}
+</div>
+
+<div class="col-md-7 middle">
+    {% block main %}{% endblock %}
+</div>
+
+<div class="col-md-3 right">
+    {% nevercache %}
+    {% include "includes/language_selector.html" %}
+    {% include "includes/user_panel.html" %}
+    {% endnevercache %}
+    <div class="panel panel-default">
+    <div class="panel-body">
+    {% block right_panel %}
+    {% ifinstalled mezzanine.twitter %}
+    {% include "twitter/tweets.html" %}
+    {% endifinstalled %}
+    {% endblock %}
+    </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+{% endblock %}
+{% block footer_js %}
+{% include "includes/footer_scripts.html" %}
+{% endblock %}

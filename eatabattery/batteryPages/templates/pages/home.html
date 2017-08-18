@@ -1,0 +1,37 @@
+{% extends "pages/base.html" %}
+{% load i18n mezzanine_tags blog_tags keyword_tags disqus_tags %}
+{% load static blog_tags %}
+{% block main %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 left">
+			<h2>Crucial Stuff</h2>
+            {% for blog_post in blog_posts.object_list %}
+                {{ blog_post }}
+{{ blog_post.description_from_content|safe }}
+                <p>1</p>
+            {% empty %}
+                <h2>Fuck all news</h2>
+            {% endfor %}
+            <ul>
+                <li>
+                    <h3>Enjoying With Hummus</h3>
+                    <div class="container">
+                        <iframe src="https://www.youtube.com/embed/FacZ5N4fHyA" frameborder="3" allowfullscreen></iframe>
+                    </div>
+                </li>
+                <li>
+                    <h3>Detective BuckPasser</h3>
+                    <p>The finest in modern text based adventure games! The vivid colors! The action! All in your imagination!</p>
+                    <p> <a href="https://snhobbs.github.io/DetectiveBuckPasser/" style="color:black">Find it now on Github!</a></p>
+                </li>
+            </ul>
+		</div>
+        <div class="col-md-6 middle">
+            {% include "pages/battery.html" %}
+        </div>
+        <div class="col-md-3 right"></div>
+    	</div>
+    </div>
+</div>
+{% endblock %}

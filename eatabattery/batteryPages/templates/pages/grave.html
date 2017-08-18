@@ -1,0 +1,18 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block main %}
+<div class = "row">
+    <div class="col-md-2 left"></div>
+        <div class="col-md-8 middle" align="center">
+            <div class="img-responsive" style="max-width:100%;min-width:100px;">
+                <img class = "img-responsive" src="{% static "pages/pickle.gif" %}">
+                <img class="img-responsive" src="{% static "pages/grave.jpg" %}" >
+            </div>
+            <div class="container" align="center" style="width:2%;">
+			    <iframe width="25" height="25" src="https://www.youtube.com/embed/Z-FPimCmbX8?autoplay=1&start=31" frameborder="0" allowfullscreen></iframe>
+		    </div>
+		</div>
+        <div class="col-md-2 right"></div>
+	</div>
+</div>
+{% endblock %}
