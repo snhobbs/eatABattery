@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+
+{% load i18n mezzanine_tags blog_tags keyword_tags disqus_tags %}
+{% load static blog_tags %}
+
+{% block main %]
+
+{% for poem in poems %}
+<div class = "img-responsive">
+	<img class="img-responsive" src="{{ poem.picture }}">
+	<div class="caption" style="color:white;">
+<h3>{{ poem.title }}</h3>
+<p>
+{{ poem.poem }}
+</p>
+
+</div>
+	</div>
+{% endfor %}
+hello
