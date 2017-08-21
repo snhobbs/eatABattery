@@ -6,15 +6,12 @@
 
 header {
 	background-color: gold;
-	color: white;
+	color: black;
 }
 
 body {
 	background-color: white;
 	color: black;
-}
-a{
-    color:lightgray;
 }
 
 p {
@@ -125,7 +122,7 @@ p {
 
 a{
 	text-decoration: none;
-	color: white;
+	color: lightgray;
 }
 
 #grave{

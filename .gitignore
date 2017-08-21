@@ -1,7 +1,11 @@
+*.swp
+*.swo
+*.pyc
+*.aux
 *.pyc
 *.pyo
 *.db
 .DS_Store
 .coverage
 local_settings.py
-/static
+eatabattery/static
