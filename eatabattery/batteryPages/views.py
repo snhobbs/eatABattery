@@ -48,6 +48,8 @@ class Poem(object):
             self.poem = f.read()
 
 def poems(request):
+    poemDir = "../appData/poems"
+
     from glob import glob
     poems = []
     for poem in glob("../appData/poems/*.txt"):
