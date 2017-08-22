@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
 {% endif %}
 {% endifinstalled %}
-<link href="{% static "pages/eatabattery.css" %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static "pages/eatabattery.css" %}">
 <link rel="stylesheet" href="{% static "pages/bootstrap-theme_altered.css" %}">
 {% block extra_css %}{% endblock %}
 {% endcompress %}
@@ -46,6 +46,15 @@
 
 {% block extra_head %}{% endblock %}
 </head>
+
+<style>
+.navLogo{
+    max-width:100px;
+    max-height:200px;
+}
+
+{% block style_block %}{% endblock %}
+</style>
 
 <body id="{% block body_id %}body{% endblock %}">
 <a name="Top"></a>
