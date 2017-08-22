@@ -1,0 +1,39 @@
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="10000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    {% for slide in heroSlides %}
+    <li data-target="#bs-carousel" data-slide-to="{{ slide.number }}"></li>
+    {% endfor %}
+</ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slideImage" style="background-image: url({{ heroSlidesTop.image }});"></div>
+      <div class="hero">
+        <hgroup>
+            {% autoescape off %}
+            {{ heroSlidesTop.body }}
+            {% endautoescape %}
+        </hgroup>
+    </div>
+    </div>
+
+    {% for slide in heroSlides %}
+    <div class="item slides">
+    <div class="slideImage" style="background-image: url({{ slide.image }});"></div>
+      <div class="hero">        
+        <hgroup>
+            {% autoescape off %}
+            {{ slide.body }}
+            {% endautoescape %}
+        </hgroup>       
+      </div>
+  </div> 
+  {% endfor %}
+</div>
+</div>

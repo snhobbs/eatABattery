@@ -4,18 +4,27 @@
 {% load static blog_tags %}
 
 {% block main %}
+<div class ="container" style="padding:0;margin:0 0 50 50;">
 
+
+{% comment %}
 {% for poem in poems %}
 <div class = "img-responsive">
-	<img class="img-responsive" src="{{ poem.picture }}">
+	<img class="img-responsive" width="100%" src="{{ poem.image }}">
 	<div class="caption" style="color:white;">
 <h3>{{ poem.title }}</h3>
 <p>
+{% autoescape off %}
 {{ poem.poem }}
+{% endautoescape %}
 </p>
 
 </div>
 	</div>
 {% endfor %}
+
+{% endcomment %}
+{% include "pages/carouselHero.html" %}
+</div>
 
 {% endblock %}
