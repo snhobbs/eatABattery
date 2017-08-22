@@ -1,4 +1,5 @@
-		<div class="container" id="battery">
+{% load static %}
+<div class="container" id="battery">
 			<div id="nipple">
 				 <div id="padRight">
 				 </div>
@@ -13,7 +14,7 @@
 				<input type="button" value='Eat it' id="audio">
 				<script>
 					document.getElementById('audio').onclick = function(){
-						var audio = new Audio('/static/speech.wav');
+                        var audio = new Audio('{% static "eatabattery/speech.wav' %}");
 						audio.play();
 					}
             
@@ -21,7 +22,7 @@
 			</div>
 			<div id="bottom">
 				<div id="label">
-					<a href="/eatABatteryLoading.html">Duracell&reg;</a>
+					<a href="/Healthy_Living">Duracell&reg;</a>
 				</div>
 			</div>
 		</div>
