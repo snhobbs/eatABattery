@@ -68,7 +68,7 @@
     height: 100%;
     z-index: 2;
     background-color: #080d15;
-    opacity: .7;
+    opacity: 0.2;
 }
 
 /********************************/
@@ -84,6 +84,8 @@
     outline: none;
     margin: 20px auto;
 }
+
+
 
 /********************************/
 /*       Slides backgrounds     */

@@ -1,6 +1,4 @@
 <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="10000" id="bs-carousel">
-  <!-- Overlay -->
-  <div class="overlay"></div>
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -8,7 +6,10 @@
     {% for slide in heroSlides %}
     <li data-target="#bs-carousel" data-slide-to="{{ slide.number }}"></li>
     {% endfor %}
-</ol>
+    </ol>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
   
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
