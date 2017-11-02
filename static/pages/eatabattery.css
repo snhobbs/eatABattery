@@ -1,0 +1,134 @@
+/*eatABattery.css*/
+.vertical-text {
+	transform: translate(100px) rotate(20deg);
+	transform-origin: 0 -250px;
+}
+
+header {
+	background-color: gold;
+	color: black;
+}
+
+body {
+	background-color: orange;
+	color: black;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+#container{
+	background-color: orange;
+	text-align:center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+#nav{
+	background-color: orange;
+	text-align:left;
+	margin-left: auto;
+	margin-right:auto;
+	width: 300px;
+	height:300px;
+	float:left;
+}
+
+#battery{
+	padding:15px;
+	border:solid black;
+	background-color: white;
+	height: 390px;
+	width: 100px;
+	text-align:center;
+	margin-left: auto;
+	margin-right:auto;
+}    
+
+.container #battery{
+    width:140px;
+    height:425px
+}
+
+#nipple{
+	background-color: white;
+	height: 20px;
+	width: 100px;
+	
+}
+
+#nipple #centerNip{
+	background-color: silver;
+	height: 20px;
+	width: 30px;
+	float:right;
+}
+
+#nipple #padLeft{
+	background-color: white;
+	height: 20px;
+	width: 35px;
+	float:left;
+}
+#nipple #padRight {
+	background-color: white;
+	height: 20px;
+	width: 35px;
+	float:right;
+}
+
+#top {
+	background-color: gold;
+	height: 70px;
+	width: 100px;
+	float:both;
+}
+
+
+#bottom{
+	background-color: black;
+	height: 300px;
+	width: 100px;
+	
+}
+#bottom #label{
+	color: white;
+	background-color: black;
+	height: 30px;
+	width: 10px;
+	font-size: 30pt;
+	transform: translateY(50px) translateX(70px) rotate(90deg);
+	transform-origin: 0 5px;
+}
+
+#imageFrame {
+	transform: translateY(80px) translateX(-95px) rotate(-15deg);
+	float:right;
+}
+
+#batteryLoading{
+	transform: translateY(50px) translateX(70px) rotate(60deg);
+	transform-origin: 100px 350px;
+	padding:15px;
+	border:solid black;
+	background-color: white;
+	height: 390px;
+	width: 100px;
+	text-align:center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+a{
+	text-decoration: none;
+	color: lightgray;
+}
+
+#grave{
+}
+
+#imageFrameGrave{
+
+}   
+

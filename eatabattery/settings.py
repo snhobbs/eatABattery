@@ -85,6 +85,9 @@ from django.utils.translation import ugettext_lazy as _
 # INSTALLED_APPS setting.
 USE_MODELTRANSLATION = False
 
+ADMIN_THUMB_SIZE="75x75"
+SITE_TAGLINE="A Hobbs-Ricci Heavy Industries Company"
+SITE_TITLE="Alkaline Heros"
 
 ########################
 # MAIN DJANGO SETTINGS #
