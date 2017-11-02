@@ -3,35 +3,65 @@
 {% load static blog_tags %}
 {% block main %}
 <div class="container">
-	<div class="row">
-		<div class="col-md-4 left">
-			<h2>Crucial Stuff</h2>
-            {% for blog_post in blog_posts.object_list %}
-                {{ blog_post }}
-{{ blog_post.description_from_content|safe }}
-                <p>1</p>
-            {% empty %}
-                <h2>Fuck all news</h2>
-            {% endfor %}
-            <ul>
-                <li>
-                    <h3>Enjoying With Hummus</h3>
-                    <div class="container">
-                        <iframe src="https://www.youtube.com/embed/FacZ5N4fHyA" frameborder="3" allowfullscreen></iframe>
-                    </div>
-                </li>
-                <li>
-                    <h3>Detective BuckPasser</h3>
-                    <p>The finest in modern text based adventure games! The vivid colors! The action! All in your imagination!</p>
-                    <p> <a href="https://snhobbs.github.io/DetectiveBuckPasser/" style="color:black">Find it now on Github!</a></p>
-                </li>
-            </ul>
-		</div>
-        <div class="col-md-6 middle">
-            {% include "pages/battery.html" %}
-        </div>
-        <div class="col-md-3 right"></div>
-    	</div>
-    </div>
+
+
+<div class="row">
+<div class="col-md-4 left">
+
+<h2>Crucial Stuff</h2>
+    <ul>
+        <li>
+            <h3>Enjoying With Hummus</h3>
+            <div class="container">
+                <iframe src="https://www.youtube.com/embed/FacZ5N4fHyA" frameborder="3" allowfullscreen></iframe>
+            </div>
+        </li>
+        <li>
+            <h3>Detective BuckPasser</h3>
+            <p>The finest in modern text based adventure games! The vivid colors! The action! All in your imagination!</p>
+            <p> <a href="https://snhobbs.github.io/DetectiveBuckPasser/" style="color:black">Find it now on Github!</a></p>
+        </li>
+    </ul>
+
+</div>
+
+<div class="col-md-4 middle">
+    {% include "pages/battery.html" %}
+</div>
+<div class="col-md-4 right">
+
+{% blog_recent_posts limit=3 category="News" as recent_posts %}
+    {% if recent_posts %}
+    <h2>News & Information</h2>
+    <ul>
+        {% for recent_post in recent_posts %}
+        <li>
+            <h3><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h3>
+
+            {% comment %}
+            <div class = "row">
+            {% if recent_post.featured_image %}
+                <div class="col-md-3 pull-left thumbnail">
+                    <img class="tumbnail" src="/static/media/{{ recent_post.featured_image }}">
+                </div>
+                <div class="col-md-3 pull-left"></div>
+                <div class="col-md-9 pull-right">
+            {% else %}
+                <div class="col-md-12">
+            {% endif %}
+            {% endcomment %}
+            <div class="recent-summary">
+                {{ recent_post.description_from_content|safe }}
+                <a href="{{ recent_post.get_absolute_url }}" class="label-inverse">{% trans "read more&hellip;" %}</a>
+            <hr>
+            </div><!-- /recent-summary -->
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+
+</div>
 </div>
 {% endblock %}
