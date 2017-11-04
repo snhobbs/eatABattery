@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.views.i18n import set_language
 
 from mezzanine.core.views import direct_to_template
+from django.views.generic.base import RedirectView
 from mezzanine.conf import settings
 from mezzanine.blog import views as blog_views
 from mezzanine.pages import views as page_views
@@ -32,6 +33,7 @@ urlpatterns += [
     url("^", include(batteryPages.urlpatterns)),
     url("^News/", blog_views.blog_post_list),
     url("^$", page_views.page, {"slug": "/"}),
+    url(r'^robots/.txt', RedirectView.as_view('/static/robots.txt')),
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
