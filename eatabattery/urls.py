@@ -33,7 +33,7 @@ urlpatterns += [
     url("^", include(batteryPages.urlpatterns)),
     url("^News/", blog_views.blog_post_list),
     url("^$", page_views.page, {"slug": "/"}),
-    url(r'^robots/.txt', RedirectView.as_view('/static/robots.txt')),
+    url(r'^robots/.txt', RedirectView.as_view(url='/static/robots.txt')),
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
