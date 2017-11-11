@@ -10,8 +10,8 @@ def home(request):
     template = loader.get_template('pages/home.html')
     context = {}
     context.update({
-        "description":"Hobbs ElectroOptics Home Page", 
-        "title":"Home",
+        "description":"All things chargable and dischargable. A truly electric community.", 
+        "title":"Hospital",
     })
     return HttpResponse(template.render(context, request))
 
@@ -19,8 +19,8 @@ def pj(request):
     template = loader.get_template('pages/grave.html')
     context = {}
     context.update({
-        "description":"Hobbs ElectroOptics Home Page", 
-        "title":"Home",
+        "description":"PJ The Party Pickle dancing on your grave suckka", 
+        "title":"PJ The Party Pickle",
     })
     return HttpResponse(template.render(context, request))
 
@@ -29,8 +29,8 @@ def healthyLiving(request):
     template = loader.get_template('pages/healthyLiving.html')
     context = {}
     context.update({
-        "description":"Hobbs ElectroOptics Home Page", 
-        "title":"Home",
+        "description":"Battery health facts and calorie information", 
+        "title":"Healthy Living",
     })
     return HttpResponse(template.render(context, request))
 
@@ -91,8 +91,8 @@ def poems(request):
     template = loader.get_template('pages/poems.html')
     context = Poems("batteryPages/appData/poems").context
     context.update({
-        "description":"Battery Love Poems", 
-        "title":"Poems",
+        "description":"Battery haikus", 
+        "title":"Kirkland Corner",
     })
     return HttpResponse(template.render(context, request))
 
