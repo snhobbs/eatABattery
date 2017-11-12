@@ -32,7 +32,7 @@
 
 {% blog_recent_posts limit=3 category="News" as recent_posts %}
     {% if recent_posts %}
-    <h2>News & Information</h2>
+    <h2>News & <del> Mis</del>information</h2>
     <ul>
         {% for recent_post in recent_posts %}
         <li>
