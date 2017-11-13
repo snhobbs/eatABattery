@@ -8,7 +8,37 @@
 <div class="row">
 <div class="col-md-4 left">
 
-<h2>Crucial Stuff</h2>
+{% blog_recent_posts limit=3 category="Crucial Stuff" as recent_posts %}
+    {% if recent_posts %}
+    <h2>Crucial Stuff</h2>
+    <ul>
+        {% for recent_post in recent_posts %}
+        <li>
+            <h3><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h3>
+
+            <div class = "row">
+            {% if recent_post.featured_image %}
+                <div class="col-md-3 pull-left thumbnail">
+                    <img class="tumbnail" src="/static/media/{{ recent_post.featured_image }}">
+                </div>
+                <div class="col-md-3 pull-left"></div>
+                <div class="col-md-9 pull-right">
+            {% else %}
+                <div class="col-md-12">
+            {% endif %}
+
+            <div class="recent-summary">
+                {{ recent_post.description_from_content|safe }}
+                <a href="{{ recent_post.get_absolute_url }}" class="label-inverse">{% trans "read more&hellip;" %}</a>
+            <hr>
+            </div><!-- /recent-summary -->
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+{% comment %}
     <ul>
         <li>
             <h3>Enjoying With Hummus</h3>
@@ -24,6 +54,7 @@
     </ul>
 
 </div>
+{% endcomment %}
 
 <div class="col-md-4 middle">
     {% include "pages/battery.html" %}
