@@ -14,6 +14,11 @@ body {
 	color: black;
 }
 
+#body {
+	background-color: orange;
+	color: black;
+}
+
 p {
     font-family: verdana;
     font-size: 20px;
@@ -23,6 +28,20 @@ p {
 	text-align:center;
 	margin-left: auto;
 	margin-right:auto;
+}
+
+.panel a{
+    color:blue;
+    text-decoration:none;
+}
+
+.pager a{
+    color:gray;
+    text-decoration:none;
+}
+
+html {
+	background-color: orange;
 }
 
 #nav{
@@ -44,7 +63,7 @@ p {
 	text-align:center;
 	margin-left: auto;
 	margin-right:auto;
-}    
+}
 
 .container #battery{
     width:140px;
@@ -102,6 +121,10 @@ p {
 	transform-origin: 0 5px;
 }
 
+#label a{
+    text-decoration:none;
+}
+
 #imageFrame {
 	transform: translateY(80px) translateX(-95px) rotate(-15deg);
 	float:right;
@@ -127,4 +150,9 @@ a {
 
 html {
     background-color: orange;
+}
+
+.navbar-default a {
+    text-decoration:none;
+
 }

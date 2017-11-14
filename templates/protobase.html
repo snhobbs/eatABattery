@@ -26,9 +26,10 @@
 {% endifinstalled %}
 
 {% compress css %}
-<link rel="stylesheet" href="{% static "pages/eatabattery.css" %}">
+{% block extra_css %}{% endblock %}
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
 <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+<link rel="stylesheet" href="{% static "pages/eatabattery.css" %}">
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
 {% endif %}
@@ -39,7 +40,6 @@
 {% endif %}
 {% endifinstalled %}
 <link rel="stylesheet" href="{% static "pages/bootstrap-theme_altered.css" %}">
-{% block extra_css %}{% endblock %}
 {% endcompress %}
 
 {% compress js %}
@@ -55,7 +55,6 @@
 <![endif]-->
 
 {% block extra_head %}{% endblock %}
-</head>
 
 <style>
 .navLogo{
@@ -65,6 +64,7 @@
 
 {% block style_block %}{% endblock %}
 </style>
+</head>
 
 <body id="{% block body_id %}body{% endblock %}">
 <a name="Top"></a>
@@ -120,6 +120,7 @@
 
 {% block body %}{% endblock %}
 
+{% comment %}
 <!-- Footer -->
 <div class="container">
 <footer style="background-color:transparent;border:0;" width="100%">
@@ -134,6 +135,7 @@
     </div>
 </footer>
 </div>
+{% endcomment %}
 
 {% block footer %}{% endblock %}
 {% include "googleAnalytics.html" %}
