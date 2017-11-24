@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Patent, PatentGroup, Case
+
+admin.site.register(Patent)
+admin.site.register(PatentGroup)
+admin.site.register(Case)
