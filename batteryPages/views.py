@@ -96,4 +96,13 @@ def poems(request):
     })
     return HttpResponse(template.render(context, request))
 
-
+def bear(request):
+    from .models import AudioClip
+    
+    template = loader.get_template('pages/bear.html')
+    context = {
+        "description":"Bear", 
+        "title":"Bear",
+        'mp3s':AudioClip.objects.filter(tagName__title = 'bear')
+    }
+    return HttpResponse(template.render(context, request))

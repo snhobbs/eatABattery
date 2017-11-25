@@ -1,7 +1,5 @@
 from django.contrib import admin
+from .models import AudioClip, AudioTag
 
-from .models import Patent, PatentGroup, Case
-
-admin.site.register(Patent)
-admin.site.register(PatentGroup)
-admin.site.register(Case)
+admin.site.register(AudioTag)
+admin.site.register(AudioClip)

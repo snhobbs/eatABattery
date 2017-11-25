@@ -1,35 +1,20 @@
 from django.db import models
-class PatentGroup(models.Model):
-    pass
-
-class Patent(models.Model):
-    number = models.CharField(max_length=50)
-    link = models.CharField(max_length=50)
-    name = models.CharField(max_length=50) 
-    description = models.TextField()
-    label = models.ForeignKey(
-        PatentGroup,
-        on_delete=models.CASCADE,
-    )
-    
+from mezzanine.core.fields import FileField
+from django.utils.translation import ugettext_lazy as _
+from mezzanine.utils.models import upload_to
+class AudioTag(models.Model):
+    title = models.CharField(max_length=75)
     def __str__(self):
-        return(self.number)
+        return self.title
+
+class AudioClip(models.Model):
+    title = models.CharField(max_length=75)
+    description = models.TextField()
+    mp3 = FileField(verbose_name=_("MP3"),
+        upload_to=upload_to("AudioClip.mp3", "audio"),
+        format='', max_length=255)
+    tagName = models.ManyToManyField(AudioTag)
+
+    def __str__(self):
+        return self.title
     
-    @property
-    def path(self):
-        import os
-        return os.path.join("/static/eoi/patents/", self.link)
-
-
-class InstrumentClass(models.Model):
-    pass
-
-class Case(models.Model):
-    case_name = models.CharField(max_length = 100)
-    jurisdiction = models.CharField(max_length = 100)
-    counsel = models.CharField(max_length = 300)
-    start = models.DateField() 
-    end = models.DateField() 
-    work_product = models.TextField()
-    notes = models.TextField()
-    status = models.TextField()

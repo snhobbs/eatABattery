@@ -1,0 +1,38 @@
+{% extends "pages/base.html" %}
+{% load mezzanine_tags %}
+{% load static %}
+{% block main %}
+
+<h1>Bear</h1>
+
+<p>
+If you stumbled upon this, Im sorry.
+If we've sent this to you, you know why you're here.
+If you looked for this you have other problems.
+</p>
+
+<p>
+Bear is the landlord of the Kodiak Apartments. He isn't very good at his job.
+This is how he interacts with his tenants.
+</p>
+
+<h2>Recordings of The Landlord</h2>
+{% for audio in mp3s %}
+    {% if audio.title %}
+    <h3>{{ audio.title }}</h3>
+    {% endif %}
+    {% if audio.description %}
+    <p>
+{% editable audio.description %}
+{{ audio.description|richtext_filters|safe }}
+{% endeditable %}
+    </p>
+    {% endif %}
+    <div class="pull-middle">
+    {% with audio.mp3 as mp3 %}
+    {% include "pages/mp3.html" %}
+    {% endwith %}
+    </div>
+    <hl>
+{% endfor %}
+{% endblock %}
