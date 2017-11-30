@@ -24,6 +24,7 @@ class Video(models.Model):
     title = models.CharField(max_length=75, default="")
     description = models.TextField(default = "")
     video = EmbedVideoField()
+    published = models.DateTimeField(auto_now=False, auto_now_add=False)
     def __str__(self):
         return self.title
 

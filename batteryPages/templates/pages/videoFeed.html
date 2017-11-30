@@ -1,5 +1,6 @@
 {% extends "pages/base.html" %}
-{% load embed_video_tags %}
+{% load embed_video_tags staticfiles static %}
+{% load mezzanine_tags %}
 
 {% block main %}
 
@@ -10,9 +11,16 @@
 {% for videoItem in videos %}
     {% video videoItem.video as my_video %}
     <span class="video">
+{% editable videoItem.title %}
         <h3>{{ videoItem.title }}</h3>
+{% endeditable %}
+{% editable videoItem.published %}
+        <p>{{ videoItem.published }}</p>
+{% endeditable %}
         {% video my_video "100%x300" %}
+{% editable videoItem.description %}
         <p>{{ videoItem.description }}</p>
+{% endeditable %}
     <hr>
     </span>
     {% endvideo %}
