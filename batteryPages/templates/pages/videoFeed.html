@@ -1,0 +1,30 @@
+{% extends "pages/base.html" %}
+{% load embed_video_tags %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+    <h1 style="text-align:center">Metal Gear Scholar</h1>
+{% for videoItem in videos %}
+    {% video videoItem.video as my_video %}
+    <span class="video">
+        <h3>{{ videoItem.title }}</h3>
+        {% video my_video "100%x300" %}
+        <p>{{ videoItem.description }}</p>
+    <hr>
+    </span>
+    {% endvideo %}
+
+    {% comment %}
+        URL: {{ my_video.url }}
+        Thumbnail: {{ my_video.thumbnail }}
+        Backend: {{ my_video.backend }}
+    {% endcomment %}
+{% endfor %}
+    </div>
+    <div class="col-md-3"></div>
+
+
+{% endblock %}

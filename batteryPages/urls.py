@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^PJ', views.pj),
     url(r'^Kirkland_Corner', views.poems),
     url(r'^Bear', views.bear),
+    url(r'^MGS', views.mgs),
     ]

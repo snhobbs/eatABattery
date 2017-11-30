@@ -2,6 +2,8 @@ from django.db import models
 from mezzanine.core.fields import FileField
 from django.utils.translation import ugettext_lazy as _
 from mezzanine.utils.models import upload_to
+from embed_video.fields import EmbedVideoField
+
 class AudioTag(models.Model):
     title = models.CharField(max_length=75)
     def __str__(self):
@@ -18,3 +20,10 @@ class AudioClip(models.Model):
     def __str__(self):
         return self.title
     
+class Video(models.Model):
+    title = models.CharField(max_length=75, default="")
+    description = models.TextField(default = "")
+    video = EmbedVideoField()
+    def __str__(self):
+        return self.title
+

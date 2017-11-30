@@ -106,3 +106,14 @@ def bear(request):
         'mp3s':AudioClip.objects.filter(tagName__title = 'bear')
     }
     return HttpResponse(template.render(context, request))
+
+def mgs(request):
+    from .models import Video
+    
+    template = loader.get_template('pages/videoFeed.html')
+    context = {
+        "description":"Metal Gear Scholar", 
+        "title":"Metal Gear Scholar",
+        'videos':Video.objects.all()#filter(tagName__title = 'MGS')
+    }
+    return HttpResponse(template.render(context, request))

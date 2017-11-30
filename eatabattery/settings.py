@@ -252,6 +252,7 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     "batteryPages",
     "soulPages",
+    "embed_video",
     # "mezzanine.accounts",
     # "mezzanine.mobile",
 )
