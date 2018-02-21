@@ -7,7 +7,7 @@
     <span style="text-align:center; padding: 0 60px 0 0"><h3>The Site Most Recently Banned From Reddit!</h3></span>
 
 <div class="row">
-<div class="col-md-4 left">
+<div class="col-md-4 left" style = "max-width:100%">
 
 {% blog_recent_posts limit=3 category="Crucial Stuff" as recent_posts %}
     {% if recent_posts %}
@@ -19,7 +19,7 @@
 
             <div class = "row">
             {% if recent_post.featured_image %}
-                <div class="col-md-3 pull-left thumbnail">
+                <div class="col-md-3 pull-left thumbnail" style="width:100">
                     <img class="tumbnail" src="/static/media/{{ recent_post.featured_image }}">
                 </div>
                 <div class="col-md-3 pull-left"></div>
@@ -84,7 +84,7 @@
                 <div class="col-md-12">
             {% endif %}
             {% endcomment %}
-            <div class="recent-summary">
+            <div class="recent-summary" width="100px">
                 {{ recent_post.description_from_content|safe }}
                 <a href="{{ recent_post.get_absolute_url }}" class="label-inverse">{% trans "read more&hellip;" %}</a>
             <hr>
