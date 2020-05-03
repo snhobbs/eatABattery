@@ -1,0 +1,1 @@
+Use sudo certbot --nginx and follow prompts, redirect all HTTP traffic to https and renew the certs

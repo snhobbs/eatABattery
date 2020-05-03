@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=simon
+Group=www-data
+WorkingDirectory=/home/simon/techdev
+ExecStart=/usr/bin/gunicorn --access-logfile /home/simon/techdev/accessLog --error-logfile /home/simon/techdev/errorLog, --log-file /home/simon/techdev/log --workers 3 --timeout 60 --bind unix:/home/simon/techdev/gunicorn.sock devhellelop.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+

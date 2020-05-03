@@ -1,0 +1,19 @@
+server {
+    server_name www.eatabattery.com eatabattery.com;
+    client_max_body_size 20m;
+    location /favicon.ico {
+        root            /home/simon/eatabattery/static/img;
+        access_log      off;
+        log_not_found   off;
+    }
+
+    location /static/ {
+        root /home/simon/eatabattery;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/simon/eatabattery/gunicorn.sock;
+    }
+
+}
