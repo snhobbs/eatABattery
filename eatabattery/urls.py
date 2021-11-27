@@ -34,6 +34,7 @@ urlpatterns += [
     url("^Soul4Cash$", direct_to_template, {"template": "Cash_4_Gold.html"}),
     url("^News/", blog_views.blog_post_list),
     url("^$", page_views.page, {"slug": "/"}),
+    url("^buckpasser/", direct_to_template, {"template": "pages/buckpasser.html"}),
     url(r'^robots.txt', RedirectView.as_view(url='/static/robots.txt')),
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
